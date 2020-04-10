@@ -1,11 +1,10 @@
 # require modules here
 require "yaml"
-emots = YAML.load_file('lib/emoticons.yml')
 
 puts emots
 
 def load_library
-  # code goes here
+  emots = YAML.load_file('lib/emoticons.yml')
 end
 
 def get_japanese_emoticon
