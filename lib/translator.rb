@@ -1,12 +1,10 @@
 # require modules here
 require "yaml"
 
-puts emots
-
-def load_library
-  emots = YAML.load_file('lib/emoticons.yml')
+def load_library(library)
+  emotsfile = YAML.load_file(library)
   sorted_emots = {}
-  emots.each do |key, value|
+  emotsfile.each do |key, value|
     if sorted_emots[key] == nil
       sorted_emots[key] = {}
     end
@@ -16,10 +14,26 @@ def load_library
   return sorted_emots
 end
 
-def get_japanese_emoticon
-  # code goes here
+def get_japanese_emoticon(library, emot)
+  emots = load_library(library)
+  emots.each do |key1, value1|
+    value1.each do |key2, value2|
+      if value2 == emot
+        return emots[key1][:japanese]
+      end
+    end
+  end
+  return nil
 end
 
-def get_english_meaning
-  # code goes here
+def get_english_meaning(library, emot)
+  emots = load_library(library)
+  emots.each do |key1, value1|
+    value1.each do |key2, value2|
+      if value2 == emot
+        return emots[key1][:english]
+      end
+    end
+  end
+  return nil
 end
