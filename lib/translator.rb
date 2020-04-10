@@ -31,7 +31,7 @@ def get_english_meaning(library, emot)
   emots.each do |key1, value1|
     value1.each do |key2, value2|
       if value2 == emot
-        return emots[key1][:english]
+        return key1
       end
     end
   end
