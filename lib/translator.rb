@@ -1,6 +1,6 @@
 # require modules here
 require "yaml"
-emots = YAML.load_file('emoticons.yml')
+emots = YAML.load_file('lib/emoticons.yml')
 
 puts emots
 
