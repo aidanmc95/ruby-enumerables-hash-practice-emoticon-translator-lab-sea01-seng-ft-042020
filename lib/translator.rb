@@ -35,5 +35,5 @@ def get_english_meaning(library, emot)
       end
     end
   end
-  return nil
+  return "Sorry, that emoticon was not found"
 end
